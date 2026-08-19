@@ -1,11 +1,11 @@
-import { HomePage } from "./pages/HomePage";
+import { HomePage } from "./pages/home/HomePage";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { CheckoutPage } from "./pages/CheckoutPage";
-import { OrderPage } from "./pages/orderPage";
-import { TrackingPage } from "./pages/TrackingPage,";
+import { CheckoutPage } from "./pages/checkout/CheckoutPage";
+import { OrderPage } from "./pages/orders/orderPage";
+import { TrackingPage } from "./pages/tracking/TrackingPage,";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -19,7 +19,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage cart={cart} />}></Route>
       <Route path="checkout" element={<CheckoutPage cart={cart} />}></Route>
-      <Route path="orders" element={<OrderPage  cart={cart}/>}></Route>
+      <Route path="orders" element={<OrderPage cart={cart} />}></Route>
       <Route path="tracking" element={<TrackingPage />}></Route>
     </Routes>
   );
