@@ -10,10 +10,12 @@ import { TrackingPage } from "./pages/tracking/TrackingPage,";
 function App() {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    axios.get("/api/cart-items?expand=product").then((response) => {
+    const fetchAppData = async () => {
+      const response = await axios.get("/api/cart-items?expand=product");
       //console.log(response.data); //; you can see product add to cart
       setCart(response.data);
-    });
+    };
+    fetchAppData();
   }, []);
   return (
     <Routes>
