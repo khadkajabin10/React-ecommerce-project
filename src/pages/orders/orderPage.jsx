@@ -9,9 +9,11 @@ import { OrderGrid } from "./OrderGrid";
 export function OrderPage({ cart }) {
   const [Orders, setOrders] = useState([]);
   useEffect(() => {
-    axios.get("/api/orders?expand=products").then((response) => {
+    const fetchOrderPageData = async () => {
+      const response = await axios.get("/api/orders?expand=products");
       setOrders(response.data);
-    });
+    };
+    fetchOrderPageData();
   }, []);
   return (
     <>
