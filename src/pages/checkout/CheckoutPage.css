@@ -13,6 +13,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.updatebox {
+  width: 50px;
+}
 
 .checkout-page .page-title {
   font-weight: 700;
@@ -110,7 +113,6 @@
 }
 
 .checkout-page .product-price {
-
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -152,7 +154,6 @@
 }
 
 .checkout-page .delivery-option-date {
-
   font-weight: 500;
   margin-bottom: 3px;
 }
