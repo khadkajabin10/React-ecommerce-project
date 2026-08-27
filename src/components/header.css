@@ -147,3 +147,11 @@
   width: 26px;
   text-align: center;
 }
+.brand-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: white;
+  letter-spacing: 0.5px;
+  font-family: "Segoe UI", sans-serif;
+  font-style: italic;
+}

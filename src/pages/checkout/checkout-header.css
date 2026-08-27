@@ -107,3 +107,11 @@
     width: auto;
   }
 }
+.checkout-brand-text {
+  font-size: 27px;
+  font-weight: 600;
+  color: rgb(25, 135, 84);
+  letter-spacing: 0.5px;
+  font-family: "Segoe UI", sans-serif;
+  font-style: italic;
+}
