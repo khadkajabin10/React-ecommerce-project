@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 import { OrderGrid } from "./OrderGrid";
 
-export function OrderPage({ cart }) {
+export function OrderPage({ cart,loadCart }) {
   const [Orders, setOrders] = useState([]);
   useEffect(() => {
     const fetchOrderPageData = async () => {
@@ -24,7 +24,7 @@ export function OrderPage({ cart }) {
         <div className="page-title">Your Orders</div>
 
         <div className="orders-grid">
-          <OrderGrid Orders={Orders} />
+          <OrderGrid Orders={Orders} loadCart={loadCart} />
         </div>
       </div>
     </>
