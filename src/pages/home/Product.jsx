@@ -23,11 +23,13 @@ export function Product({ product, loadCart }) {
     setQuantity(quantitySelected);
   };
   return (
-    <div className="product-container">
+    <div className="product-container" data-testid="product-container">
       <div className="product-image-container">
-        <img className="product-image" 
-        data-testid="product-image"
-        src={product.image} />
+        <img
+          className="product-image"
+          data-testid="product-image"
+          src={product.image}
+        />
       </div>
 
       <div className="product-name limit-text-to-2-lines">{product.name}</div>
@@ -70,7 +72,11 @@ export function Product({ product, loadCart }) {
         Added
       </div>
 
-      <button className="add-to-cart-button button-primary" onClick={addToCart} data-testid="add-to-cart-button">
+      <button
+        className="add-to-cart-button button-primary"
+        onClick={addToCart}
+        data-testid="add-to-cart-button"
+      >
         Add to Cart
       </button>
     </div>
