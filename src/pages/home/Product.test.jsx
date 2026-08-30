@@ -1,4 +1,4 @@
-import { it, expect, describe, vi } from "vitest";
+import { it, expect, describe, vi, beforeEach } from "vitest";
 import { Product } from "./Product";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
@@ -6,8 +6,10 @@ import axios from "axios"; //bex of vimock this is fake version of axios
 vi.mock("axios");
 
 describe("Product Component", () => {
-  it("Displays the product details correctly", () => {
-    const product = {
+  let product;
+  let loadCart;
+  beforeEach(() => {
+    product = {
       id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
       image: "images/products/athletic-cotton-socks-6-pairs.jpg",
       name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
@@ -18,7 +20,10 @@ describe("Product Component", () => {
       priceCents: 1090,
       keywords: ["socks", "sports", "apparel"],
     };
-    const loadCart = vi.fn();
+    loadCart = vi.fn();
+  });
+
+  it("Displays the product details correctly", () => {
     render(<Product product={product} loadCart={loadCart} />);
     expect(
       screen.getByText("Black and Gray Athletic Cotton Socks - 6 Pairs"),
@@ -36,7 +41,7 @@ describe("Product Component", () => {
     expect(screen.getByText("87")).toBeInTheDocument();
   });
   it("adds a produt to the cart", async () => {
-    const product = {
+    /*const product = {
       id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
       image: "images/products/athletic-cotton-socks-6-pairs.jpg",
       name: "Black and Gray Athletic Cotton Socks - 6 Pairs",
@@ -47,7 +52,7 @@ describe("Product Component", () => {
       priceCents: 1090,
       keywords: ["socks", "sports", "apparel"],
     };
-    const loadCart = vi.fn(); //fake bec to records "i was called or not"
+    const loadCart = vi.fn(); //fake bec to records "i was called or not"*/
 
     render(<Product product={product} loadCart={loadCart} />);
     const user = userEvent.setup();
