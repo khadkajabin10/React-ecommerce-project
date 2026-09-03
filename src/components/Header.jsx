@@ -34,6 +34,11 @@ export function Header({ cart }) {
             placeholder="Search"
             value={search}
             onChange={updateSearchInput}
+            onKeyDown={(event) => {
+              if (event.key === "Enter") {
+                searchProducts();
+              }
+            }}
           />
 
           <button className="search-button">
