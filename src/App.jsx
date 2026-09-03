@@ -5,7 +5,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { CheckoutPage } from "./pages/checkout/CheckoutPage";
 import { OrderPage } from "./pages/orders/orderPage";
-import { TrackingPage } from "./pages/tracking/TrackingPage,";
+import { TrackingPage } from "./pages/tracking/TrackingPage";
 
 function App() {
   const [cart, setCart] = useState([]);
